@@ -6,7 +6,9 @@
 .settings/*
 target/
 *.iml
+*.mvn
 **/*.iml
+**/*.mvn
 /build/
 out.txt
 *.lck
@@ -31,3 +33,5 @@ conf/secret.key
 *.ipr
 *.iws
 nb-configuration.xml
+build.gradle
+gradle/
