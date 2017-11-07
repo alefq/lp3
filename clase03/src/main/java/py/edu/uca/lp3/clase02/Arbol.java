@@ -20,9 +20,9 @@ public class Arbol {
 
 	public Arbol(int altura, String tipo) {
 		/*
-		 * "CTRL-/" ó "CTRL-7" (en teclados Latinoamericanos o Españoles) sirve
-		 * para comentar o descomentar un bloque seleccionado o la línea en que
-		 * se encuentra el cursor
+		 * "CTRL-/" ó "CTRL-7" (en teclados Latinoamericanos o Españoles) sirve para
+		 * comentar o descomentar un bloque seleccionado o la línea en que se encuentra
+		 * el cursor
 		 */
 		System.out.println("Un " + tipo + " de " + altura + " metros");
 	}

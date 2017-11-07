@@ -4,7 +4,7 @@ public class Alumno extends Persona {
     /**
 	 * 
 	 */
-	private static final long serialVersionUID = -5406810600298675463L;
+	private static final long serialVersionUID = -775956149942529402L;
 	/*
      * Especializamos la clase Persona, agregando un atributo exclusivo de esta
      * clase por ser una clase hija de Persona, Alumno obtiene todas las
@@ -12,20 +12,20 @@ public class Alumno extends Persona {
      */
     private int numeroMatricula;
 
-    public Alumno(String nombre, String apellido, int edad) {
-        /*
-         * invocamos al constructor de la super clase (clase padre), en este
-		 * caso se invoca al constructor de la clase persona
-		 */
-        super(nombre, apellido, edad);
-    }
-
     public Alumno() {
         /*
 		 * invocamos al constructor de la super clase (clase padre), en este
 		 * caso se invoca al constructor de la clase persona
 		 */
         super(-1, "sin nombre");
+    }
+
+    public Alumno(String nombre, String apellido, int edad) {
+        /*
+         * invocamos al constructor de la super clase (clase padre), en este
+		 * caso se invoca al constructor de la clase persona
+		 */
+        super(nombre, apellido, edad);
     }
 
     public int getNumeroMatricula() {
