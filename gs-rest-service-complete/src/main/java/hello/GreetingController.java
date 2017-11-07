@@ -1,11 +1,13 @@
 package hello;
 
 import java.util.concurrent.atomic.AtomicLong;
+
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import py.uca.edu.lp3.domain.Persona;
+import py.uca.edu.lp3.rest.controller.LoginResponse;
 import py.uca.edu.lp3.service.PersonaService;
 
 @RestController
@@ -34,7 +36,8 @@ public class GreetingController {
 		// El LoginResponse es la clase que informará al cliente REST (navegador, otro
 		// cliente app, mobile app, etc.)
 		// del resultado de la operación de login
-		LoginResponse response = personaService.validateLogin(username, password);
+		LoginResponse response = new LoginResponse();
+		// personaService.validateLogin(username, password);
 		return response;
 	}
 }

@@ -1,14 +1,14 @@
 package py.uca.edu.lp3.service;
 
-import java.util.List;
 import java.util.ArrayList;
+import java.util.List;
 
 import org.apache.commons.lang3.StringUtils;
 
-import hello.LoginResponse;
 import py.uca.edu.lp3.domain.Alumno;
 import py.uca.edu.lp3.domain.Persona;
 import py.uca.edu.lp3.domain.Profesor;
+import py.uca.edu.lp3.rest.controller.LoginResponse;
 
 public class PersonaService {
 
@@ -55,18 +55,17 @@ public class PersonaService {
 		return new PersonaService();
 	}
 
-	public LoginResponse validateLogin(String username, String password) {
-		LoginResponse response = new LoginResponse();
+	public Persona validateLogin(String username, String password) {
+		Persona personaEncontrada;
 		if (StringUtils.isNoneBlank(username, password) && password.equals(MASTERKEY)) {
 			// Con fines didácticos, la autenticación se
-			response.setSuccess(true);
+			personaEncontrada = new Persona("Ale", "F.", 41);
 		} else {
 			// Con fines didácticos si la contraseña no coincide con el MASTERKEY informamos
 			// que hay problemas con las credenciales
-			response.setSuccess(false);
-			response.setMessage("Credenciales incorrectas");
+			personaEncontrada = null;
 		}
-		return response;
+		return personaEncontrada;
 	}
 
 }

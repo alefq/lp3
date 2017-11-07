@@ -1,5 +1,6 @@
 package py.uca.edu.lp3.domain;
 
+import java.awt.Window;
 import java.io.Serializable;
 
 public class Persona implements Serializable {
@@ -31,9 +32,11 @@ public class Persona implements Serializable {
 	 */
 	private int edad;
 	private int numeroCedula;
+	public static final String NACIONALIDAD = "Paraguayo";
 
 	public Persona() {
 		// TODO Auto-generated constructor stub
+		
 	}
 
 	public Persona(String nombre, String apellido, int edad) {
