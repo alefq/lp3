@@ -1,34 +1,29 @@
-package hello;
+package py.uca.edu.lp3.rest.controller;
 
-import java.util.concurrent.atomic.AtomicLong;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import hello.LoginResponse;
+import py.uca.edu.lp3.constants.ApiPaths;
 import py.uca.edu.lp3.domain.Persona;
 import py.uca.edu.lp3.service.PersonaService;
 
 @RestController
-public class GreetingController {
+public class PersonaController {
 
-	private static final String template = "Hello, %s!";
-	private final AtomicLong counter = new AtomicLong();
 	// Simulamos el design pattern de Controller-Service-Data_Access
+	// típico de aplicaciones basadas en el framework Spring
 	private PersonaService personaService = PersonaService.buildInstance();
 
-	@RequestMapping("/greeting")
-	public Greeting greeting(@RequestParam(value = "name", defaultValue = "World") String name) {
-		return new Greeting(counter.incrementAndGet(), String.format(template, name));
-	}
-
-	@RequestMapping("/persona")
-	public Persona obtenerPersona(@RequestParam(value = "numeroCedula", required = false) Integer numeroCedula) {
+	@RequestMapping(ApiPaths.PERSONA)
+	public Persona obtenerPersona(@RequestParam(value = "numeroCedula", required = true) Integer numeroCedula) {
 		return personaService.findPersonaByNroCedula(numeroCedula);
 	}
 
 	// Creamos un nuevo método y un nuevo REST Endpoint, para implementar un login
 	// con Request parameters (desde el URL)
-	@RequestMapping("/login")
+	@RequestMapping(ApiPaths.LOGIN)
 	public LoginResponse login(@RequestParam(value = "username") String username,
 			@RequestParam(value = "password") String password) {
 		// El LoginResponse es la clase que informará al cliente REST (navegador, otro

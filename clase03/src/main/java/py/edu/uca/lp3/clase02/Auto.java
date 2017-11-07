@@ -2,7 +2,7 @@ package py.edu.uca.lp3.clase02;
 
 public class Auto {
 	/* Definimos las propiedades para nuestra clase */
-	int anho;
+	int anyo;
 	String marca;
 	String modelo;
 	int velocidad;
@@ -24,6 +24,14 @@ public class Auto {
 
 	void acelerar() {
 		velocidad++;
+	}
+
+	public int getAnyo() {
+		return anyo;
+	}
+
+	public void setAnyo(int anho) {
+		this.anyo = anho;
 	}
 
 	public String getMarca() {
@@ -49,4 +57,6 @@ public class Auto {
 	public void setVelocidad(int velocidad) {
 		this.velocidad = velocidad;
 	}
+
+
 }
