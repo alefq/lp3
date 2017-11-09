@@ -8,13 +8,14 @@ import org.apache.commons.lang3.StringUtils;
 import py.uca.edu.lp3.domain.Alumno;
 import py.uca.edu.lp3.domain.Persona;
 import py.uca.edu.lp3.domain.Profesor;
-import py.uca.edu.lp3.rest.controller.LoginResponse;
 
 public class PersonaService {
 
 	// Utilizamos una clave maestra con esta constante, con fines didácticos
 	private static final String MASTERKEY = "123456";
 
+	//Esta implementación de la interface java.util.List será el contenedor 
+	//de nuestra lista de personas para los ejemplos de clase
 	private List<Persona> personasExampleList = new ArrayList<Persona>();
 
 	public PersonaService() {

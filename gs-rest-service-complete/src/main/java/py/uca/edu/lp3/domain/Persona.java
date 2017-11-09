@@ -1,6 +1,5 @@
 package py.uca.edu.lp3.domain;
 
-import java.awt.Window;
 import java.io.Serializable;
 
 public class Persona implements Serializable {

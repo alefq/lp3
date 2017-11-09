@@ -1,4 +1,4 @@
-package hello;
+package py.uca.edu.lp3.domain;
 
 public class Greeting {
 
