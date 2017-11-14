@@ -30,30 +30,4 @@ public class Profesor extends Persona implements Serializable {
 	public void setNroInscripcion(int nroInscripcion) {
 		this.nroInscripcion = nroInscripcion;
 	}
-	
-	@Override
-	public String toString() {
-		String cadena = super.toString();
-		cadena = cadena +   ", Edad: "  + getEdad();
-		// TODO Auto-generated method stub
-		return cadena;
-	}
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
