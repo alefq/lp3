@@ -36,3 +36,5 @@ nb-configuration.xml
 build.gradle
 gradle/
 gs-rest-service-complete/.springBeans
+**/*.springBeans
+
