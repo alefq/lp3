@@ -57,13 +57,7 @@ public class LeeFichero {
 			 * En el finally cerramos el fichero, para asegurarnos que se cierra
 			 * tanto si todo va bien como si salta una excepcion.
 			 */
-			try {
-				if (null != fileReader) {
-					fileReader.close();
-				}
-			} catch (Exception e2) {
-				e2.printStackTrace();
-			}
+			EscribirFicheroTexto.close(fileReader);
 		}
 	}
 }

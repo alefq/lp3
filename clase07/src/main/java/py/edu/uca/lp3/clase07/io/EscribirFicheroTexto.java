@@ -20,28 +20,36 @@ public class EscribirFicheroTexto {
 		// Validamos si existe el fichero
 		String sFichero = "/tmp/archivo.txt";
 		File fichero = new File(sFichero);
-
-		if (fichero.exists())
+		FileWriter fileWriter = null;
+		if (fichero.exists()) {
 			System.out.println("El fichero " + sFichero + " ya existe");
-		else {
+		} else {
 			try {
-				FileWriter fileWriter = new FileWriter(sFichero);
-//				BufferedWriter bw = new BufferedWriter(fileWriter);
-//
-//				// Escribimos 10 filas
+				fileWriter = new FileWriter(sFichero);
+				// BufferedWriter bw = new BufferedWriter(fileWriter);
+				//
+				// // Escribimos 10 filas
 				for (int x = 0; x < 10; x++)
-//					bw.write("Fila numero " + x + "\n");
-				fileWriter.write("Fila numero " + x + "\n");
+					// bw.write("Fila numero " + x + "\n");
+					fileWriter.write("Fila numero " + x + "\n");
 
-
-				// Hay que cerrar el fichero
-//				bw.close();
-				fileWriter.close();
 			} catch (IOException ioe) {
 				ioe.printStackTrace();
+			} finally {
+				close(fileWriter);
 			}
 		}
 
+	}
+
+	public static void close(Closeable closeable) {
+		try {
+			closeable.close();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
 	}
 
 }
