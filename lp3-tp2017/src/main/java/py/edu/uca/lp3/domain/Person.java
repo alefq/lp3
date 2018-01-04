@@ -1,44 +1,17 @@
 package py.edu.uca.lp3.domain;
 
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
 
 @Entity
-public class Person {
+public class Person extends BasePerson {
+	private String nickName;
 
-	private String firstName;
-
-	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
-	private long id;
-	private String lastName;
-
-	public String getFirstName() {
-		return firstName;
+	public String getNickName() {
+		return nickName;
 	}
 
-	public long getId() {
-		return id;
+	public void setNickName(String nickName) {
+		this.nickName = nickName;
 	}
 
-	public String getLastName() {
-		return lastName;
-	}
-
-	public void setFirstName(String firstName) {
-		this.firstName = firstName;
-	}
-
-	public void setId(long id) {
-		this.id = id;
-	}
-
-	public void setLastName(String lastName) {
-		this.lastName = lastName;
-	}
-	
-	
-	
 }
