@@ -6,7 +6,10 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.ComponentScan;
 
 @SpringBootApplication
-@ComponentScan(basePackages = { "py.edu.uca.lp3.rest.controller", "py.uca.edu.lp3.repository", "py.edu.uca.lp3.service" })
+@ComponentScan(basePackages = { 
+		"py.edu.uca.lp3.rest.controller", 
+		"py.uca.edu.lp3.repository", "py.edu.uca.lp3.service",
+		"py.edu.uca.lp3.service.impl"})
 @EnableAutoConfiguration
 public class Application {
 
