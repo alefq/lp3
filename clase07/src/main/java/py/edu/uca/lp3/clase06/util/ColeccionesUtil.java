@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
+import java.util.Set;
 
 import py.edu.uca.lp3.clase01.Materia;
 import py.edu.uca.lp3.clase02.Alumno;
@@ -22,10 +23,10 @@ public class ColeccionesUtil {
 		 * devuelve un tipo de dato List, sabemos que podemos pedirle su
 		 * iterador, para recorrer la lista
 		 */
-		Iterator<Alumno> Alumnos = alumnosMaterias.keySet().iterator();
-		while (Alumnos.hasNext()) {
+		Iterator<Alumno> alumnos = alumnosMaterias.keySet().iterator();
+		while (alumnos.hasNext()) {
 			/* Iteramos sobre las Alumnos */
-			Alumno alumno = Alumnos.next();
+			Alumno alumno = alumnos.next();
 			/*
 			 * Por medio de los Generics podemso saber que los valores
 			 * almacenados serán de tipo ArrayList de Alumnos
@@ -39,10 +40,11 @@ public class ColeccionesUtil {
 
 	/*
 	 * Imprimimos cualquier mapa. Utilizamos el caracter comodín "?" para
-	 * indicar qeu aceptamos cualquier tipo de dato
+	 * indicar que aceptamos cualquier tipo de dato
 	 */
 	public static void imprimirMapaToString(Map<?, ?> mapa) {
-		Iterator<?> claves = mapa.keySet().iterator();
+		Set<?> keySet = mapa.keySet();
+		Iterator<?> claves = keySet.iterator();
 		while (claves.hasNext()) {
 			/*
 			 * Sabemos que java.lang.Object es al clase ancestra de todos,
